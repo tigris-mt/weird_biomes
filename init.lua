@@ -25,7 +25,7 @@ local function biome(name, checks)
                 end
             end
             if not found then
-                minetest.log("warning", "Enabled biome '" .. name .. "' not loaded due to missing dependencies: " .. table.concat(check, ","))
+                minetest.log("warning", "Enabled biome '" .. name .. "' not loaded due to missing dependency: " .. table.concat(check, " or "))
                 return false
             end
         end
