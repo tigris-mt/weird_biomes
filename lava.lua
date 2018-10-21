@@ -15,14 +15,16 @@ minetest.register_biome({
     node_river_water = "default:obsidian",
 })
 
-minetest.register_ore({
-    ore_type = "blob",
-    ore = "caverealms:hot_cobble",
-    wherein = {"default:stone"},
-    clust_scarcity = 3^3,
-    clust_size = 4,
-    clust_num_ores = 24,
-    y_min = weird_biomes.secondary_ore_min,
-    y_max = weird_biomes.max.y,
-    biomes = {"lava"},
-})
+if minetest.get_modpath("caverealms") then
+    minetest.register_ore({
+        ore_type = "blob",
+        ore = "caverealms:hot_cobble",
+        wherein = {"default:stone"},
+        clust_scarcity = 3^3,
+        clust_size = 4,
+        clust_num_ores = 24,
+        y_min = weird_biomes.secondary_ore_min,
+        y_max = weird_biomes.max.y,
+        biomes = {"lava"},
+    })
+end

@@ -34,8 +34,8 @@ local function biome(name, checks)
     return true
 end
 
---minetest.clear_registered_biomes()
-
 biome("crystal", {"caverealms"})
 biome("rocky", {})
 biome("lava", {})
+
+biome("cheese", {{"tigris_mobs_animals", "mobs_redo_animals"}})
