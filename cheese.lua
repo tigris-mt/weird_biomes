@@ -6,7 +6,7 @@ minetest.register_biome({
     node_water_top = "mobs:cheeseblock",
     depth_water_top = 10,
     y_max = 4,
-    y_min = -48,
+    y_min = -4,
     heat_point = 20,
     humidity_point = 65,
 })

@@ -11,7 +11,7 @@ minetest.register_biome({
     y_max = weird_biomes.max.y,
     heat_point = 90,
     humidity_point = 40,
-    node_water = "default:lava_source",
+    node_water = "default:obsidian",
     node_river_water = "default:obsidian",
 })
 
@@ -28,3 +28,21 @@ if minetest.get_modpath("caverealms") then
         biomes = {"lava"},
     })
 end
+
+minetest.register_decoration({
+    deco_type = "simple",
+    place_on = {"default:stone"},
+    sidelen = 16,
+    noise_params = {
+        offset = 0,
+        scale = 0.001,
+        spread = {x = 200, y = 200, z = 200},
+        seed = 329,
+        octaves = 3,
+        persist = 0.6
+    },
+    biomes = {"lava"},
+    y_min = 0,
+    y_max = weird_biomes.max.y,
+    decoration = "default:lava_source",
+})
