@@ -11,8 +11,6 @@ minetest.register_biome({
     y_max = weird_biomes.max.y,
     heat_point = 90,
     humidity_point = 40,
-    node_water = "default:obsidian",
-    node_river_water = "default:obsidian",
 })
 
 if minetest.get_modpath("caverealms") then
