@@ -12,7 +12,7 @@ minetest.register_biome({
     heat_point = 90,
     humidity_point = 40,
     node_water = "default:lava_source",
-    node_river_water = "default:lava_source",
+    node_river_water = "default:obsidian",
 })
 
 minetest.register_ore({

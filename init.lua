@@ -1,5 +1,9 @@
 weird_biomes = {}
 
+if minetest.get_mapgen_setting("mg_name") == "v6" then
+    error("Weird Biomes cannot operate under Mapgen v6. Use a mapgen with biome support.")
+end
+
 weird_biomes.min = vector.new(-31000, -31000, -31000)
 weird_biomes.max = vector.new(31000, 31000, 31000)
 weird_biomes.secondary_min = -112
