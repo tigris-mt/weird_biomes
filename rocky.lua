@@ -7,8 +7,8 @@ minetest.register_biome({
     node_stone = "default:stone",
     node_riverbed = "default:gravel",
     depth_riverbed = 2,
-    y_min = weird_biomes.secondary_min,
-    y_max = weird_biomes.max.y,
+    y_min = 12,
+    y_max = 24,
     heat_point = 50,
     humidity_point = 10,
 })
