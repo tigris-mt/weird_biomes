@@ -13,6 +13,8 @@ function weird_biomes.include(p)
     dofile(minetest.get_modpath(minetest.get_current_modname()) .. "/" .. p)
 end
 
+weird_biomes.include("decoration_helpers.lua")
+
 local function biome(name, checks)
     if minetest.settings:get_bool("weird_biomes.biome_" .. name, true) then
         for _,check in ipairs(checks) do

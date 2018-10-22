@@ -44,3 +44,55 @@ minetest.register_decoration({
     y_max = weird_biomes.max.y,
     decoration = "default:lava_source",
 })
+
+local o = "default:obsidian"
+local l = "default:lava_source"
+
+minetest.register_decoration({
+    deco_type = "schematic",
+    place_on = {"default:stone"},
+    sidelen = 80,
+    fill_ratio = 0.0025,
+    biomes = {"lava"},
+    y_min = weird_biomes.secondary_min,
+    y_max = weird_biomes.max.y,
+    schematic = weird_biomes.nc(vector.new(3, 7, 3), {
+        {vector.new(-1, -2, -1), o},
+        {vector.new(-1, -2, 1), o},
+        {vector.new(1, -2, -1), o},
+        {vector.new(1, -2, 1), o},
+
+        {vector.new(-1, -1, -1), o},
+        {vector.new(-1, -1, 1), o},
+        {vector.new(1, -1, -1), o},
+        {vector.new(1, -1, 1), o},
+
+        {vector.new(-1, 0, -1), o},
+        {vector.new(-1, 0, 1), o},
+        {vector.new(1, 0, -1), o},
+        {vector.new(1, 0, 1), o},
+
+        {vector.new(-1, 1, -1), o},
+        {vector.new(-1, 1, 1), o},
+        {vector.new(1, 1, -1), o},
+        {vector.new(1, 1, 1), o},
+
+        {vector.new(-1, 2, -1), o},
+        {vector.new(-1, 2, 1), o},
+        {vector.new(1, 2, -1), o},
+        {vector.new(1, 2, 1), o},
+
+        {vector.new(-1, 3, -1), o, 64},
+        {vector.new(-1, 3, 1), o, 64},
+        {vector.new(1, 3, -1), o, 64},
+        {vector.new(1, 3, 1), o, 64},
+        {vector.new(0, 3, -1), o, 64},
+        {vector.new(0, 3, 1), o, 64},
+        {vector.new(-1, 3, 0), o, 64},
+        {vector.new(1, 3, 0), o, 64},
+
+        {vector.new(0, 3, 0), l},
+    }),
+    rotation = "random",
+    flags = {place_center_x = true, place_center_y = true, place_center_z = true},
+})

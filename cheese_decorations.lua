@@ -1,24 +1,6 @@
-local function nc(size, nodes, yp)
-    local ret = {
-        size = size,
-        data = {},
-        yslice_prob = yp or {},
-    }
-    for i=1,size.x * size.y * size.z do
-        table.insert(ret.data, {name = "air", prob = 0})
-    end
-    for _,n in ipairs(nodes) do
-        local pos = vector.add(n[1], vector.floor(vector.divide(size, 2)))
-        local name = n[2]
-        local prob = n[3] or 255
-        local area = VoxelArea:new({MinEdge=vector.new(0, 0, 0), MaxEdge=vector.subtract(size, 1)})
-        ret.data[area:indexp(pos)] = {name = name, prob = prob}
-    end
-    return ret
-end
 local function rcd(node, biomes, fill_ratio)
     local cd_schems = {
-        nc(vector.new(3, 6, 3), {
+        weird_biomes.nc(vector.new(3, 6, 3), {
             {vector.new(0, -2, 0), node},
             {vector.new(0, -1, 0), node},
             {vector.new(0, 0, 0), node},
@@ -45,7 +27,7 @@ local function rcd(node, biomes, fill_ratio)
         }, {
             {ypos = 5, prob = 127},
         }),
-        nc(vector.new(3, 7, 3), {
+        weird_biomes.nc(vector.new(3, 7, 3), {
             {vector.new(0, -2, 0), node},
             {vector.new(0, -1, 0), node},
             {vector.new(0, 0, 0), node},
@@ -83,7 +65,7 @@ local function rcd(node, biomes, fill_ratio)
         }, {
             {ypos = 6, prob = 127},
         }),
-        nc(vector.new(3, 7, 3), {
+        weird_biomes.nc(vector.new(3, 7, 3), {
             {vector.new(0, -2, 0), node},
             {vector.new(1, -2, 0), node},
             {vector.new(1, -2, 1), node},
@@ -109,7 +91,7 @@ local function rcd(node, biomes, fill_ratio)
             {vector.new(0, 2, 0), node},
             {vector.new(0, 3, 0), node, 64},
         }),
-        nc(vector.new(3, 5, 3), {
+        weird_biomes.nc(vector.new(3, 5, 3), {
             {vector.new(0, -1, 0), node},
             {vector.new(1, -1, 0), node},
             {vector.new(1, -1, 1), node},
